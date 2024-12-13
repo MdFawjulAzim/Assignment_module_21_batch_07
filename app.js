@@ -1,5 +1,5 @@
 const express =require('express');
-const router =require('./src/routes/api');
+const router =require('./src/routes/api.js');
 const app= new express();
 
 const rateLimit =require('express-rate-limit');
