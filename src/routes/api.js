@@ -6,8 +6,11 @@ const router = express.Router();
 
 
 
-//User
+//Registration 
 router.post('/Registration',UserController.Registration);
+
+//Login
+router.post("/Login", UserController.Login);
 
 
 
