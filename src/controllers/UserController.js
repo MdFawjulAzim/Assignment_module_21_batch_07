@@ -1,4 +1,4 @@
-const {RegistrationService,loginService,SingleReadProfileService,AllUserReadProfileService,SingleProfileUpdateService} = require('../services/UserServices.js');
+const {RegistrationService,loginService,SingleReadProfileService,AllUserReadProfileService,SingleProfileUpdateService,SingleUserDeleteService} = require('../services/UserServices.js');
 
 //Registration 
 exports.Registration = async(req,res)=>{
@@ -38,5 +38,12 @@ exports.AllUserReadProfile = async(req,res)=>{
 //SingleProfileUpdate
 exports.SingleProfileUpdate = async(req,res)=>{
     let result = await SingleProfileUpdateService(req);
+    return res.status(200).json(result);
+}
+
+
+//SingleUserDelete
+exports.SingleUserDelete = async(req,res)=>{
+    let result = await SingleUserDeleteService(req);
     return res.status(200).json(result);
 }

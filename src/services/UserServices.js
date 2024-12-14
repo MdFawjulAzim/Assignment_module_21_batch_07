@@ -67,10 +67,28 @@ const SingleProfileUpdateService = async(req)=>{
     }
 }
 
+//SingleUserDeleteService
+const SingleUserDeleteService = async(req)=>{
+    try{
+        let user_id = req.headers.user_id;
+
+        const user = await UserModel.findByIdAndDelete(user_id);
+        return {status:"success", message: "User Delete successfully"} 
+    }catch (e) {
+        return { status: "fail", message: `Something went wrong: ${e.message}` };
+    }
+}
+
+
+
+
+
+
 module.exports = {
     RegistrationService,
     loginService,
     SingleReadProfileService,
     AllUserReadProfileService,
-    SingleProfileUpdateService
+    SingleProfileUpdateService,
+    SingleUserDeleteService
 }

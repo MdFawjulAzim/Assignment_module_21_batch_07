@@ -24,4 +24,9 @@ router.get('/AllUserReadProfile',UserController.AllUserReadProfile);
 router.post('/SingleProfileUpdate',AuthVerification,UserController.SingleProfileUpdate);
 
 
+//SingleUserDelete
+router.get('/SingleUserDelete',AuthVerification,UserController.SingleUserDelete);
+
+
+
 module.exports = router;
