@@ -17,5 +17,8 @@ router.post('/Login', UserController.Login);
 //SingleReadProfile
 router.get('/SingleReadProfile',AuthVerification,UserController.SingleReadProfile);
 
+//AllUserReadProfile
+router.get('/AllUserReadProfile',UserController.AllUserReadProfile);
+
 
 module.exports = router;

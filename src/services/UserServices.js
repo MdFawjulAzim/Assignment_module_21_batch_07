@@ -42,8 +42,19 @@ const SingleReadProfileService = async(req)=>{
 }
 
 
+//AllUserReadProfileService
+const AllUserReadProfileService = async(req)=>{
+    try{
+        let result = await UserModel.find({});
+        return {status:"success", message: "ALL User Profile retrieved successfully", data:result}
+    }catch (e) {
+        return { status: "fail", message: `Something went wrong: ${e.message}` };
+    }
+}
+
 module.exports = {
     RegistrationService,
     loginService,
-    SingleReadProfileService
+    SingleReadProfileService,
+    AllUserReadProfileService
 }
