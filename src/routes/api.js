@@ -1,6 +1,7 @@
 const express = require('express');
 const UserController = require('../controllers/UserController.js');
 
+const AuthVerification = require('../middlewares/AuthVerification.js');
 
 const router = express.Router();
 
@@ -10,10 +11,11 @@ const router = express.Router();
 router.post('/Registration',UserController.Registration);
 
 //Login
-router.post("/Login", UserController.Login);
+router.post('/Login', UserController.Login);
 
 
-
+//SingleReadProfile
+router.get('/SingleReadProfile',AuthVerification,UserController.SingleReadProfile);
 
 
 module.exports = router;

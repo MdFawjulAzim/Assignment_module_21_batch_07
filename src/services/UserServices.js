@@ -30,9 +30,20 @@ const loginService =async (req)=>{
     }
 }
 
+//SingleReadProfileService
+const SingleReadProfileService = async(req)=>{
+    try{
+        let user_id = req.headers.user_id;
+        let result = await UserModel.findOne({_id:user_id});
+        return {status:"success", message: "Profile retrieved successfully", data:result}
+    }catch (e) {
+        return { status: "fail", message: `Something went wrong: ${e.message}` };
+    }
+}
 
 
 module.exports = {
     RegistrationService,
-    loginService
+    loginService,
+    SingleReadProfileService
 }

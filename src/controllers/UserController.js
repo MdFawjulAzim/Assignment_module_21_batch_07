@@ -1,4 +1,4 @@
-const {RegistrationService,loginService} = require('../services/UserServices.js');
+const {RegistrationService,loginService,SingleReadProfileService} = require('../services/UserServices.js');
 
 //Registration 
 exports.Registration = async(req,res)=>{
@@ -21,4 +21,10 @@ exports.Login =async (req,res) =>{
     }else{
         return res.status(200).json(result);
     }
+}
+
+//SingleReadProfile
+exports.SingleReadProfile = async(req,res)=>{
+    let result = await SingleReadProfileService(req);
+    return res.status(200).json(result);
 }
