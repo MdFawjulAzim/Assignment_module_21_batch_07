@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "5d589db0-a3a5-4184-a086-3fee9cc71b7e",
+		"name": "assignment_module_21_batch_07",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38179196"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"johndoe@example.com\",\r\n  \"password\": \"hashedpassword123\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"NIDNumber\": \"12345267890\",\r\n  \"phoneNumber\": \"017212345678\",\r\n  \"bloodGroup\": \"O+\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/Registration",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"Registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"johndoe@example.com\",\r\n  \"password\": \"hashedpassword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/Login",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SingleReadProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/SingleReadProfile",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"SingleReadProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllUserReadProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/AllUserReadProfile",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"AllUserReadProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SingleProfileUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe rafi\",\r\n  \"NIDNumber\": \"12345267890\",\r\n  \"phoneNumber\": \"017212345678\",\r\n  \"bloodGroup\": \"B+\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/SingleProfileUpdate",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"SingleProfileUpdate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SingleUserDelete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/SingleUserDelete",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"SingleUserDelete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE",
+			"value": "http://localhost:5030/api/v1",
+			"type": "string"
+		}
+	]
+}
