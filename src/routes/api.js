@@ -20,5 +20,8 @@ router.get('/SingleReadProfile',AuthVerification,UserController.SingleReadProfil
 //AllUserReadProfile
 router.get('/AllUserReadProfile',UserController.AllUserReadProfile);
 
+//SingleProfileUpdate
+router.post('/SingleProfileUpdate',AuthVerification,UserController.SingleProfileUpdate);
+
 
 module.exports = router;

@@ -52,9 +52,25 @@ const AllUserReadProfileService = async(req)=>{
     }
 }
 
+//SingleProfileUpdateService
+const SingleProfileUpdateService = async(req)=>{
+    try{
+        let user_id = req.headers.user_id;
+        let reqBody = req.body;
+
+        await UserModel.updateOne({_id:user_id},{$set:reqBody});
+        return {status:"success", message: "Profile Saved successfully"}
+
+        
+    }catch (e) {
+        return { status: "fail", message: `Something went wrong: ${e.message}` };
+    }
+}
+
 module.exports = {
     RegistrationService,
     loginService,
     SingleReadProfileService,
-    AllUserReadProfileService
+    AllUserReadProfileService,
+    SingleProfileUpdateService
 }
